@@ -54,7 +54,6 @@ form.addEventListener('submit', (e) => {
 
 remove.addEventListener('click', () => {
     console.log('remove');
-    console.log(stats);
     // Step 2 -- add code to allow users to remove the most recent stat
     stats.pop();
     renderStats();
@@ -63,7 +62,20 @@ remove.addEventListener('click', () => {
 });
 
 save.addEventListener('click', () => {
+    // things we need to get: total points of a game, and game number
+    let totalPoints = 0;
+    // const gameNumber = 0; we need this to be an array in order to have list
+    // in order to get total points we need to get points from each stat in stats
     // Step 3 - add code to allow users to save the state
+    
+    for (let stat of stats) {
+        
+        totalPoints = totalPoints + (stat.points * 1);
+        console.log('stat points', stat.points);
+    }
+    console.log('total points', totalPoints);
+    
+    //
     // Loop through the list of stats and add up the total points scored
     // Create a new object with the game number and the total points
     // { number: games.length + 1, totalPoints: totalPoints }
