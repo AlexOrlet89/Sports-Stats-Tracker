@@ -46,14 +46,18 @@ form.addEventListener('submit', (e) => {
         points: formData.get('points')
     };
     stats.push(stat);
-    console.log(stats);
+    // console.log(stats);
     renderStats();
     // { player: 'Bob', points: 2 }
     // Hint -- create the object from the form, push it onto the stats array, then call renderStats
 });
 
 remove.addEventListener('click', () => {
+    console.log('remove');
+    console.log(stats);
     // Step 2 -- add code to allow users to remove the most recent stat
+    stats.pop();
+    renderStats();
     // Hint -- how do you remove an element from an array?
     // Hint -- how can we rerender the stats using a function above?
 });
